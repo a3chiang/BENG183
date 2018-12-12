@@ -11,7 +11,8 @@
 
 ## 2.4.1 Introduction<a name="241"></a>
 
-ChIP sequencing is chromatin immunoprecipitation sequencing. It is a technique that uses a combination of next-generation sequencing technology and current computational analysis to elucidate genomic functions and interactions along the genome.
+ChIP sequencing is chromatin immunoprecipitation sequencing. It is a technique that uses a combination of next-generation sequencing technology and current computational analysis to elucidate genomic functions and interactions along the genome. 
+Its purpose is to find sites along a genome where proteins interact with DNA. This is important, because with the influx of data, we can look for relationships between regulatory elements and protein binding and genomic regions, which would help the gradual overall understanding of biological flow 
 
 The general workflow entails:
 - Fractionating the chromatin - **Crosslink** 
@@ -24,12 +25,16 @@ The general workflow entails:
 > Upon computational analysis, ChIP sequencing yields peaks, which are genomic areas that, relative to the reference genome, are ChIP-specific, and thus are relevant binding sites between the target protein and DNA. This aids in eventually elucidating the interaction between proteins and DNA and the functions these interactions confer.
 > We give an overview of the workflow of ChIP sequencing and its experimental considerations, as well as discuss some of its current applications and propose future ones. 
 
-## 2.3.2 Overivew of 3C methods<a name="232"></a>
+## 2.4.2 Biological Background<a name="242"></a>
 
-![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
-[Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
+To better understand ChIP sequencing, some biological background on genomic features is provided to help clarify the significance of the technology: 
+- DNA structure: Composed of double-helix strands wrapped around histones into chromatin, which are condensed into tightly-packed nucleosomes, which are subsequently folded into chromosomes. 
+- Protein binding: Confers biological functions, including but not limited to replication, gene transcription and expression, gene splicing, etc. 
+- Transcription factors: Proteins that bind to transcription binding sites in order to start gene transcription for gene expression
+- Histone Modifications: Leads to different effects on transcription based on the combinations of modifications including phosphorylation, methylation, and acetylation. 
+- Enhancers: Regulatory elements along the genome that alter gene expression; sequential proximity does not always imply physical proximity, as chromosomal structure is folded up rather than linear. 
 
-To better understand the difference between these methods, I'd like to distingush them between the following couple of aspects:
+## 2.4.3 ChIP Sequencing Process<a name="243"></a>
 
 #### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
 ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
