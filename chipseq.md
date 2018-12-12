@@ -1,25 +1,28 @@
 # 2.4 ChIP Sequencing
-1. [Introduction](#231)
-2. [Biological Background](#232)<br>
-    2.1. [ChIP-seq](#2321)<br>
-    2.2. [DNase-seq](#2322)<br>
-    2.3. [ATAC-seq](#2323)<br>
-    2.4. [MNase-seq](#2324)<br>
-    2.5. [FAIRE-seq](#2325)
-3. [Selected methods comparison](#233)
+1. [Introduction](#241)
+2. [Biological Background](#242)
+3. [ChIP Sequencing Process](#243)<br>
+    3.1. [Workflow](#2431)<br>
+    3.2. [Experimental Considerations](#2432)
+3. [Computational Analysis](#244)
+4. [Current Applications](#245)
+5. [Future Applications](#246)
 
 
-## 2.2.1 Introduction<a name="231"></a>
+## 2.4.1 Introduction<a name="241"></a>
 
-The foundamental object of 3C(Chromosome Conformation Capture) techniques and 3C-derived methods is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
+ChIP sequencing is chromatin immunoprecipitation sequencing. It is a technique that uses a combination of next-generation sequencing technology and current computational analysis to elucidate genomic functions and interactions along the genome.
 
-To capture the interaction (crosslink between strings), there are few steps in general:
-- Take a snapshot of the flowing cells - **Crosslink** with fixative agent (formaldehyde)
-- Zoom in on crosslinked part and exclude untangled parts - **Digested** with a restriction enzyme
-- Analyze the components come from the same chromatin - **Reverse crosslink** and **sequence**
-- Finish the jigsaw puzzle and get the results - **Align** the reads and **summarize** the contacts
+The general workflow entails:
+- Fractionating the chromatin - **Crosslink** 
+- Shearing DNA into fragments - **Digest or Mechanically Shear**
+- Immunoprecipitating desired fragments - **Add protein-specific antibody**
+- Purifying fragments - **Reverse crosslinks**
+- Sequencing fragments as reads - **Sequence**
+- Analyzing reads - **Map reads onto reference genome**
 
-> Based on these general ideas, then we'll dive deeper by walking through two of the most popular  techniques and then briefly introduce some other methods. 
+> Upon computational analysis, ChIP sequencing yields peaks, which are genomic areas that, relative to the reference genome, are ChIP-specific, and thus are relevant binding sites between the target protein and DNA. This aids in eventually elucidating the interaction between proteins and DNA and the functions these interactions confer.
+> We give an overview of the workflow of ChIP sequencing and its experimental considerations, as well as discuss some of its current applications and propose future ones. 
 
 ## 2.3.2 Overivew of 3C methods<a name="232"></a>
 
