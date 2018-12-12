@@ -4,9 +4,11 @@
 3. [ChIP Sequencing Process](#243)<br>
     3.1. [Workflow](#2431)<br>
     3.2. [Experimental Considerations](#2432)
-3. [Computational Analysis](#244)
-4. [Current Applications](#245)
-5. [Future Applications](#246)
+4. [Computational Analysis](#244)<br>
+    4.1. [Workflow](#2441)<br>
+    4.2. [Experimental Considerations](#2442)
+5. [Current Applications](#245)
+6. [Future Applications](#246)
 
 
 ## 2.4.1 Introduction<a name="241"></a>
@@ -38,7 +40,7 @@ To better understand ChIP sequencing, some biological background on genomic feat
 
 A more detailed look at the workflow and the associated experimental considerations of the ChIP Sequencing process is provided: 
 
-#### 1) Workflow<a name="2431"></a>
+#### Workflow<a name="2431"></a>
 A. DNA-binding proteins are crosslinked to DNA with formaldehyde in vivo. When a double strand break is made, a large number of proteins, including those involved with chromatin remodeling, cell cycle arrest, mismatch repair, etc., associate with the break.<br>
 B. Isolate the chromatin.<br>
 C. Shear DNA along with bound proteins into small fragments.<br>
@@ -47,45 +49,30 @@ E. Reverse the cross-linking to release the DNA and digest the proteins.<br>
 F. Use PCR to amplify specific DNA sequences to see if they were precipitated with the antibody.The DNA can be analyzed using conventional or real time PCR.<br>
 G. Sequence and map fragments to a reference genome. The size range of the sonicated DNA can be checked by reversing the crosslinks of the non-immunoprecipitated samples, treating with RNase, and running those fragments on agarose gel. 
 
-#### 2) Experimental Considerations<a name="2432"></a>
+#### Experimental Considerations<a name="2432"></a>
 Cell harvesting must be done with care and due diligence to ensure best results. Samples must then be prepared for optimal size of fragments and chromatin accessibility. Degree of crosslinking can be adjusted by altering the incubation time with formaldehyde. When it comes to sequencing, the average depth of sequencing coverage must be considered, along with the quality of reads. The accuracy of variant calling is affected by sequence quality, uniformity of coverage and the threshold of false-discovery rate. PCR signal normalization for optimal signal-to-noise ratio must also be considered. When mapping reads, the library complexity and signal-to-noise ratio need to be taken into account. 
 
 ## 2.4.4 Computational Analysis<a name="244"></a>
-Hi-C is the highest through-put version of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, hi-c is widely used.
+After having mapped the sequenced reads from ChIP sequencing, the results can be analyzed computationally to better understand the biological functions of the various mapped reads in conjunction with their relative locations. 
 
-The principle of Hi-C can be illustrated as:
-![](/assets/hic.gif)
+##### Workflow<a name="2441"></a>
+A. Reads are mapped to a reference genome.<br>
+B. Peaks are evaluated for read density, revealing where the target protein binds to the DNA a majority of the time.<br>
+C. Comparative analyses are carried out to evaluate global similarity, peak conservation, and quantitative changes.<br>
+D. Functional analyses are carried out to evaluate peak-to-gene assignment and gene expression. 
+E. Sequential analyses are carried out to search for motifs and conserved sequences. 
 
+##### Experimental Considerations<a name="2442"></a>
+When mapping reads, it must be decided whether or not to include multiple aligned reads. Allowing them increases the number of usable reads and the sensitivity of peak detection. However, the tradeoff is that the number of false positives may also increase. Normalization for differential analysis in multiplexing is also considered--this can be done via relative-level difference (de novo normalization) or absolute-level difference (spike-in analysis). With regards to peak calling, peak detection generally uses a corresponding input sample to estimate the background distribution at any genomic locus. 
 
-##### Hi-C critical steps [8] 
-- Fixation: keep DNA conformed
-- Digestion: enzyme frequency and penetratin
-- Fill-in: biotin for junction enrichment
-- Ligation: freeze interactions in sequence
-- Biotin removal: junctions only
-- Fragment size: small fragments sequence better
-- Adapter ligation: paired-end and indexing
-- PCR: create enough material for flow cell
-
-##### Hi-C derived techniques 
-- Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
-- Hi-C 1.0: [Belton-JM et al., Methods 2012](doi: 10.1016/j.ymeth.2012.05.001)
-- In situ Hi-C: [Rao et al., Cell 2014](doi: 10.1016/j.cell.2014.11.021)
-- Single cell Hi-C: [Nagano et al., Genome Biology 2015](https://doi.org/10.1186/s13059-015-0753-7)
-- DNase Hi-C [Ma, Wenxiu, Methods et al](https://www.ncbi.nlm.nih.gov/pubmed/25437436)
-- Hi-C 2.0: [Belaghzal et al., Methods 2017](https://www.ncbi.nlm.nih.gov/pubmed/28435001)
-- DLO-Hi-C: [Lin et al., Nature Genetics 2018](https://doi.org/10.1038/s41588-018-0111-2)
-- Hi-C improving: [Golloshi et al., Methods 2018](https://www.biorxiv.org/content/biorxiv/early/2018/02/13/264515.full.pdf)
-- Arima 1-day Hi-C: [Ghurye et al., BioRxiv 2018](https://www.biorxiv.org/content/early/2018/02/07/261149)
-
-## 2.3.4 ChIA-PET<a name="234"></a> 
+## 2.4.5 Current Applications<a name="245"></a> 
 ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
 - Only one type of binding factor selected
 - Different antibodies
 - ChIP conditions
 
 
-## 2.3.5 Selected methods comparison<a name="235"></a> 
+## 2.4.6 Future Applications<a name="246"></a> 
 <table>
  <tbody>
     <tr>
