@@ -66,72 +66,22 @@ E. Sequential analyses are carried out to search for motifs and conserved sequen
 When mapping reads, it must be decided whether or not to include multiple aligned reads. Allowing them increases the number of usable reads and the sensitivity of peak detection. However, the tradeoff is that the number of false positives may also increase. Normalization for differential analysis in multiplexing is also considered--this can be done via relative-level difference (de novo normalization) or absolute-level difference (spike-in analysis). With regards to peak calling, peak detection generally uses a corresponding input sample to estimate the background distribution at any genomic locus. 
 
 ## 2.4.5 Current Applications<a name="245"></a> 
-ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
-- Only one type of binding factor selected
-- Different antibodies
-- ChIP conditions
+Recent advances of ChIP Sequencing technologies allows for usage of fewer cells, and yield of better resolution. 
 
+Some current applications of this rapidly developing ChIP technology include:<br> 
+- **Context-specific co-association identification**: Peak calling is used with relaxed thresholds to obtain candidate regions for investigation. The identified sample peak sets are integrated into co-binding maps and ‘context-specific’ co-associations are identified, which are subsets of peaks binding to different transcription factor sets in other genomic regions.<br>
+- **Joint analysis for a de novo genome annotation**: Recently, integrative methods were developed to segment, classify and annotate a whole genome sequence de novo, based on unsupervised machine-learning methods. These methods directly receive all ChIP sample data and analyze them simultaneously, instead of calling peaks and comparing them individually.
 
 ## 2.4.6 Future Applications<a name="246"></a> 
-<table>
- <tbody>
-    <tr>
-        <th>Method</td>
-        <th>Targets</td>
-        <th>Resolution</td>
-        <th>Notes</td>
-    </tr>
-    <tr>
-        <td>3C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0535">[3]</a></td>
-        <td>one-vs-one</td>
-        <td>~1–10 kb<br></td>
-        <td><ul><li>Sequence of bait locus must be known</li><li>Easy data analysis</li><li>Low throughput</li></ul></td>
-    </tr>
-    <tr>
-    <td>4C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0545">[4]</a></td>
-    <td>one-vs-all</td>
-    <td>~2 kb</td>
-    <td><ul><li>Sequence of bait locus must be known</li><li>Detects novel contacts</li><li>Long-range contacts</li></ul></td>
-    </tr>
-    <tr>
-    <td>5C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0550">[5]</a></td>
-    <td>many-vs-many</td>
-    <td>~1 kb</td>
-    <td><ul><li>High dynamic range</li><li>Complete contact map of a locus</li><li>3C with ligation-mediated amplification (LMA) of a ‘carbon copy’ library of oligos designed across restriction fragment junctions of interest
-3C</li></ul></td>
-    </tr>
-    <tr>
-    <td>Hi-C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0300">[6]</a></td>
-    <td>all-vs-all</td>
-    <td>0.1–1 Mb</td>
-    <td><ul><li>Genome-wide nucleosome core positioning</li><li>Relative low resolution</li><li>High cost</li></ul></td>
-    </tr>
-    <tr>
-    <td>ChIA-PET <a href="http://refhub.elsevier.com/S0168-9525(15)00063-3/sbref1405">[7]</a></td>
-    <td>Interaction of whole genome mediated by protein</td>
-    <td>Depends on read depth and the size of the genome region bound by the protein of interest</td>
-    <td><ul><li>Lower noise with ChIP</li><li>Biased method since selected protein</li></ul></td>
-    </tr>
- </tbody>
-</table>
+With the quickly growing advancements of ChIP sequencing, there is likely to be a growth in directions for science through these developments. 
+
+Possible future directions for ChIP technology include:<br>
+- Advancing analysis of nuclear hormone signaling.<br>
+- Isolating human transcription factor targets by coupling chromatin immunoprecipitation.<br>
+- Chromatin immunoprecipitation for determining the association of proteins with specific genomic sequences in vivo
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Referrence
+# Reference
 [1] Schmitt, Anthony D., Ming Hu, and Bing Ren. "Genome-wide mapping and analysis of chromosome architecture." Nature reviews Molecular cell biology 17.12 (2016): 743.<br>
 
 [2] Risca, Viviana I., and William J. Greenleaf. "Unraveling the 3D genome: genomics tools for multiscale exploration." Trends in Genetics 31.7 (2015): 357-372.<br>
