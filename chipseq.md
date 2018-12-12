@@ -31,6 +31,11 @@ The general workflow entails:
 
 To better understand ChIP sequencing, some biological background on genomic features is provided to help clarify the significance of the technology: 
 - **DNA structure**: Composed of double-helix strands wrapped around histones into chromatin, which are condensed into tightly-packed nucleosomes, which are subsequently folded into chromosomes. 
+
+![](dnastruct.jpg)
+
+**Figure 1** DNA structure 
+
 - **Protein binding**: Confers biological functions, including but not limited to replication, gene transcription and expression, gene splicing, etc. 
 - **Transcription factors**: Proteins that bind to transcription binding sites in order to start gene transcription for gene expression
 - **Histone Modifications**: Leads to different effects on transcription based on the combinations of modifications including phosphorylation, methylation, and acetylation. 
@@ -49,6 +54,10 @@ E. Reverse the cross-linking to release the DNA and digest the proteins.<br>
 F. Use PCR to amplify specific DNA sequences to see if they were precipitated with the antibody.The DNA can be analyzed using conventional or real time PCR.<br>
 G. Sequence and map fragments to a reference genome. The size range of the sonicated DNA can be checked by reversing the crosslinks of the non-immunoprecipitated samples, treating with RNase, and running those fragments on agarose gel. 
 
+![](chipseqworkflow.jpg)
+
+**Figure 2** Diagram of ChIP Sequencing workflow. 
+
 #### Experimental Considerations<a name="2432"></a>
 Cell harvesting must be done with care and due diligence to ensure best results. Samples must then be prepared for optimal size of fragments and chromatin accessibility. Degree of crosslinking can be adjusted by altering the incubation time with formaldehyde. When it comes to sequencing, the average depth of sequencing coverage must be considered, along with the quality of reads. The accuracy of variant calling is affected by sequence quality, uniformity of coverage and the threshold of false-discovery rate. PCR signal normalization for optimal signal-to-noise ratio must also be considered. When mapping reads, the library complexity and signal-to-noise ratio need to be taken into account. 
 
@@ -61,6 +70,10 @@ B. Peaks are evaluated for read density, revealing where the target protein bind
 C. Comparative analyses are carried out to evaluate global similarity, peak conservation, and quantitative changes.<br>
 D. Functional analyses are carried out to evaluate peak-to-gene assignment and gene expression. 
 E. Sequential analyses are carried out to search for motifs and conserved sequences. 
+
+![](chipcompanalysis.jpg)
+
+**Figure 3** Diagram of ChIP Sequencing computational analysis workflow. 
 
 ##### Experimental Considerations<a name="2442"></a>
 When mapping reads, it must be decided whether or not to include multiple aligned reads. Allowing them increases the number of usable reads and the sensitivity of peak detection. However, the tradeoff is that the number of false positives may also increase. Normalization for differential analysis in multiplexing is also considered--this can be done via relative-level difference (de novo normalization) or absolute-level difference (spike-in analysis). With regards to peak calling, peak detection generally uses a corresponding input sample to estimate the background distribution at any genomic locus. 
