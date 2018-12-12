@@ -85,6 +85,3 @@ Possible future directions for ChIP technology include:<br>
 [1] Nakato, R., Shirahige, K. "Recent advances in ChIP-seq analysis: from quality management to whole-genome annotation." Briefings in Bioinformatics. 2016. 18(2): 279-290.<br>
 
 [2] Furey, T.S. "ChIP-seq and Beyond: new and improved methodologies to detect and characterize protein-DNA interactions." Nature Review Genetics. 2012. 13(12):840-852.<br>
-
-[3] https://github.com/hms-dbmi/hic-data-analysis-bootcamp/blob/master/HiC-Protocol.pptx.
-
