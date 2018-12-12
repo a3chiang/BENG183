@@ -34,7 +34,7 @@ To better understand ChIP sequencing, some biological background on genomic feat
 
 ![](dnastruct.jpg)
 
-**Figure 1** DNA structure 
+**Figure 1** DNA structure [3]
 
 - **Protein binding**: Confers biological functions, including but not limited to replication, gene transcription and expression, gene splicing, etc. 
 - **Transcription factors**: Proteins that bind to transcription binding sites in order to start gene transcription for gene expression
@@ -56,7 +56,7 @@ G. Sequence and map fragments to a reference genome. The size range of the sonic
 
 ![](chipseqworkflow.jpg)
 
-**Figure 2** Diagram of ChIP Sequencing workflow. 
+**Figure 2** Diagram of ChIP Sequencing workflow. [5]
 
 #### Experimental Considerations<a name="2432"></a>
 Cell harvesting must be done with care and due diligence to ensure best results. Samples must then be prepared for optimal size of fragments and chromatin accessibility. Degree of crosslinking can be adjusted by altering the incubation time with formaldehyde. When it comes to sequencing, the average depth of sequencing coverage must be considered, along with the quality of reads. The accuracy of variant calling is affected by sequence quality, uniformity of coverage and the threshold of false-discovery rate. PCR signal normalization for optimal signal-to-noise ratio must also be considered. When mapping reads, the library complexity and signal-to-noise ratio need to be taken into account. 
@@ -73,7 +73,7 @@ E. Sequential analyses are carried out to search for motifs and conserved sequen
 
 ![](chipcompanalysis.jpg)
 
-**Figure 3** Diagram of ChIP Sequencing computational analysis workflow. 
+**Figure 3** Diagram of ChIP Sequencing computational analysis workflow. [1]
 
 ##### Experimental Considerations<a name="2442"></a>
 When mapping reads, it must be decided whether or not to include multiple aligned reads. Allowing them increases the number of usable reads and the sensitivity of peak detection. However, the tradeoff is that the number of false positives may also increase. Normalization for differential analysis in multiplexing is also considered--this can be done via relative-level difference (de novo normalization) or absolute-level difference (spike-in analysis). With regards to peak calling, peak detection generally uses a corresponding input sample to estimate the background distribution at any genomic locus. 
@@ -95,6 +95,12 @@ Possible future directions for ChIP technology include:<br>
 
 
 # Reference
-[1] Nakato, R., Shirahige, K. "Recent advances in ChIP-seq analysis: from quality management to whole-genome annotation." Briefings in Bioinformatics. 2016. 18(2): 279-290.<br>
+[1] Bardet, A.F., He, Q., Zeitlinger, J., Stark, A. "A computational pipeline for comparative ChIP-seq analyses." Nature Protocols. 2012. 7:45-61.<br>
 
-[2] Furey, T.S. "ChIP-seq and Beyond: new and improved methodologies to detect and characterize protein-DNA interactions." Nature Review Genetics. 2012. 13(12):840-852.<br>
+[2] Furey, T.S. "ChIP-seq and Beyond: new and improved methodologies to detect and characterize protein-DNA interactions." Nature Reviews Genetics. 2012. 13(12):840-852.<br>
+
+[3] Jansen, A., Verstrepen, K.J. "Nucleosome Positioning in Saccharomyces cerevisiae." Microbioogy and molecular biology reviews. 2011. 75(2):301-320.<br> 
+
+[4] Nakato, R., Shirahige, K. "Recent advances in ChIP-seq analysis: from quality management to whole-genome annotation." Briefings in Bioinformatics. 2016. 18(2): 279-290.<br>
+
+[5] Park, P.J. "ChIP-seq:advantages and challenges of a maturing technology." Nature Reviews Genetics. 2009. 10:669-680.
