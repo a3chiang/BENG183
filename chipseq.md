@@ -23,28 +23,34 @@ The general workflow entails:
 - Analyzing reads - **Map reads onto reference genome**
 
 > Upon computational analysis, ChIP sequencing yields peaks, which are genomic areas that, relative to the reference genome, are ChIP-specific, and thus are relevant binding sites between the target protein and DNA. This aids in eventually elucidating the interaction between proteins and DNA and the functions these interactions confer.
-> We give an overview of the workflow of ChIP sequencing and its experimental considerations, as well as discuss some of its current applications and propose future ones. 
+> This section gives an overview of the workflow of ChIP sequencing and its experimental considerations, as well as discusses some of its current applications and propose future ones. 
 
 ## 2.4.2 Biological Background<a name="242"></a>
 
 To better understand ChIP sequencing, some biological background on genomic features is provided to help clarify the significance of the technology: 
-- DNA structure: Composed of double-helix strands wrapped around histones into chromatin, which are condensed into tightly-packed nucleosomes, which are subsequently folded into chromosomes. 
-- Protein binding: Confers biological functions, including but not limited to replication, gene transcription and expression, gene splicing, etc. 
-- Transcription factors: Proteins that bind to transcription binding sites in order to start gene transcription for gene expression
-- Histone Modifications: Leads to different effects on transcription based on the combinations of modifications including phosphorylation, methylation, and acetylation. 
-- Enhancers: Regulatory elements along the genome that alter gene expression; sequential proximity does not always imply physical proximity, as chromosomal structure is folded up rather than linear. 
+- **DNA structure**: Composed of double-helix strands wrapped around histones into chromatin, which are condensed into tightly-packed nucleosomes, which are subsequently folded into chromosomes. 
+- **Protein binding**: Confers biological functions, including but not limited to replication, gene transcription and expression, gene splicing, etc. 
+- **Transcription factors**: Proteins that bind to transcription binding sites in order to start gene transcription for gene expression
+- **Histone Modifications**: Leads to different effects on transcription based on the combinations of modifications including phosphorylation, methylation, and acetylation. 
+- **Enhancers**: Regulatory elements along the genome that alter gene expression; sequential proximity does not always imply physical proximity, as chromosomal structure is folded up rather than linear. 
 
 ## 2.4.3 ChIP Sequencing Process<a name="243"></a>
 
-#### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
-‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
+A more detailed look at the workflow and the associated experimental considerations of the ChIP Sequencing process is provided: 
 
-These kind of specificity is determined by the primer when people use **specific primers** before PCR. 
+#### 1) Workflow<a name="2431"></a>
+A. DNA-binding proteins are crosslinked to DNA with formaldehyde in vivo. When a double strand break is made, a large number of proteins, including those involved with chromatin remodeling, cell cycle arrest, mismatch repair, etc., associate with the break.<br>
+B. Isolate the chromatin.<br>
+C. Shear DNA along with bound proteins into small fragments.<br>
+D. Bind antibodies specific to the DNA-binding protein to isolate the complex by precipitation.<br>
+E. Reverse the cross-linking to release the DNA and digest the proteins.<br>
+F. Use PCR to amplify specific DNA sequences to see if they were precipitated with the antibody.The DNA can be analyzed using conventional or real time PCR.<br>
+G. Sequence and map fragments to a reference genome. The size range of the sonicated DNA can be checked by reversing the crosslinks of the non-immunoprecipitated samples, treating with RNase, and running those fragments on agarose gel. 
 
-#### 2) Through-put and resolution<a name="2322"></a>
-Hi-C techniques has the highest through-put (billion reads per sample) but suffering of a relative low resolution of 0.1-1Mb. However, the other methods usually have a higher resolution  around 1kb. For more details one can refer to table2 in [2].
+#### 2) Experimental Considerations<a name="2432"></a>
+Cell harvesting must be done with care and due diligence to ensure best results. Samples must then be prepared for optimal size of fragments and chromatin accessibility. Degree of crosslinking can be adjusted by altering the incubation time with formaldehyde. When it comes to sequencing, the average depth of sequencing coverage must be considered, along with the quality of reads. The accuracy of variant calling is affected by sequence quality, uniformity of coverage and the threshold of false-discovery rate. PCR signal normalization for optimal signal-to-noise ratio must also be considered. When mapping reads, the library complexity and signal-to-noise ratio need to be taken into account. 
 
-## 2.3.3 Hi-C<a name="233"></a>
+## 2.4.4 Computational Analysis<a name="244"></a>
 Hi-C is the highest through-put version of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, hi-c is widely used.
 
 The principle of Hi-C can be illustrated as:
